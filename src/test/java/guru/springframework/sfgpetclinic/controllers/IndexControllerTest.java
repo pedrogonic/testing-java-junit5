@@ -8,6 +8,7 @@ import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -23,11 +24,15 @@ class IndexControllerTest {
     @DisplayName("Test proper View name is returned for index page")
     @Test
     void index() {
+        //JUnit
         assertEquals("index", indexController.index());
         assertEquals("index", indexController.index(), "Wrong View Returned");
 
 
         assertEquals("index", indexController.index(), () -> "Another Expensive message, make me if you only have to!");
+
+        //AssertJ
+        assertThat(indexController.index()).isEqualTo("index");
     }
 
     @Test
