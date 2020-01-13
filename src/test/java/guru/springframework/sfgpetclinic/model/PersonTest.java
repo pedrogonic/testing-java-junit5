@@ -33,12 +33,10 @@ class PersonTest  implements ModelTests {
         );
     }
 
-    // Test running (value + 1) times!! \_o_/
     @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition}/{totalRepetitions}")
     @DisplayName("My Repeated Test")
-    @Test
     void myRepeatedTest() {
         //TODO - impl
-        System.out.println("test");
+        System.out.println("Repeated test!");
     }
 }
